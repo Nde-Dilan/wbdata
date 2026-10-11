@@ -4,7 +4,11 @@ wbdata: A wrapper for the World Bank API
 
 from functools import lru_cache
 
-from .client import Client
+from .client import (
+    NON_SOVEREIGN_COUNTRIES,
+    Client,
+    non_sovereign_countries,
+)
 from .version import __version__
 
 
@@ -25,3 +29,20 @@ get_incomelevels = get_default_client().get_incomelevels
 get_lendingtypes = get_default_client().get_lendingtypes
 get_sources = get_default_client().get_sources
 get_topics = get_default_client().get_topics
+
+__all__ = [
+    "NON_SOVEREIGN_COUNTRIES",
+    "non_sovereign_countries",
+    "Client",
+    "get_countries",
+    "get_data",
+    "get_dataframe",
+    "get_default_client",
+    "get_incomelevels",
+    "get_indicators",
+    "get_lendingtypes",
+    "get_series",
+    "get_sources",
+    "get_topics",
+    "__version__",
+]
